@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { setCustomer as setStoreCustomer } from '../store/modules/shop/actions';
 import Header from '../components/Header';
 
-const Home: React.FC = () => {
+const SignUp: React.FC = () => {
   const dispatch = useDispatch();
   const [customer, setCustomer] = useState({
     external_id: new Date().getTime().toString(),

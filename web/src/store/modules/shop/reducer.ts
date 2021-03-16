@@ -8,8 +8,8 @@ const INITIAL_STATE = {
   cart: [],
   marketMapSelected: null,
   mapCenter: {
-    lat: -23.561684,
-    lng: -46.625378
+    lat: -23.4116594,
+    lng: -46.8882259
   }
 };
 

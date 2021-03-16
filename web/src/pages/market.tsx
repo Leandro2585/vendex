@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { requestMarket } from '../store/modules/shop/actions';
+
 const Market = () => {
   const dispatch = useDispatch();
   const router = useRouter();

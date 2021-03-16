@@ -1,75 +1,78 @@
 <p align="center">
-  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/Leandro2585/template-server?color=%2304D361">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/Leandro2585/vendex?color=%2304D361">
 
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/Leandro2585/template-server">
-  
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/Leandro2585/vendex">
+
   <a href="https://github.com/Leandro2585/template-server/commits/master">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/Leandro2585/template-server">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/Leandro2585/vendex">
   </a>
-    
+
    <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
-   <a href="https://github.com/Leandro2585/template-server/stargazers">
-    <img alt="Stargazers" src="https://img.shields.io/github/stars/Leandro2585/template-server?style=social">
+   <a href="https://github.com/Leandro2585/vendex/stargazers">
+    <img alt="Stargazers" src="https://img.shields.io/github/stars/Leandro2585/vendex?style=social">
   </a>
 
   <a href="https://github.com.br/Leandro2585">
-    <img alt="Made by Leandro" src="https://img.shields.io/badge/made%20by-Leandro-%237519C1">
+    <img alt="Made By por Leandro" src="https://img.shields.io/badge/made%20by-Leandro-%237519C1">
   </a>  
- 
-</p>
 
-<h4 align="center"> 
-	🚧  Template Server under development 🚀 🚧
+</p>
+<img src="./web/public/logo-full.svg"/>
+<h4 align="center">
+	🚧  Vendex in development 🚀 🚧
 </h4>
 
 <p align="center">
  <a href="#-about-the-project">About</a> •
- <a href="#-how-to-execute-the-project">How to execute</a> • 
- <a href="#-technologies">Technologies</a> • 
- <a href="#-author">Author</a> • 
- <a href="#user-content--licence">Licence</a>
+ <a href="#-how-to-execute-the-project">How to Execute the Project</a> •
+ <a href="#-technologies">Technologies</a> •  
+ <a href="#-author">Author</a> •
+ <a href="#user-content--licença">License</a>
 </p>
 
 
 ## 💻 About the project
 
-Template Server - is a way to speed up the process of creating a new project, with this template you skip the initial stages of standardized libs installations and are already ready to go to development, so it speeds up the programmer's work to a great extent.
+Vendex - This is a marketplace for supermarkets, where they should be able to register their information and their respective products, the central idea is that the customer can choose in which market it makes more sense to buy the product they want, there are also some advantages of making your shopping cart virtually is that you can easily choose the best products with the best prices and at the end of your purchase a portion of the amount paid is returned to supermarkets.
 
 ---
 
 ## 🚀 How to execute the project
 
-This template was developed with Typescript, so make sure it is usual for your context before installing.
+Esse projeto foi desenvolvido com Typescript, portanto certifique-se de que é usual para o seu contexto antes de fazer a instalação.
 
 ### Pre-requisites
 
-Before starting, you will need to have the following tools installed on your machine:
-[Git](https://git-scm.com), [Node.js](https://nodejs.org/en/). 
-Besides, it is good to have an editor to work with the code like [VSCode](https://code.visualstudio.com/)
+Before you start, you will need to have the following tools installed on your machine:
+[Git](https://git-scm.com), [Node.js](https://nodejs.org/en/).
+Besides this, it is good to have an editor to work with the code, such as [VSCode](https://code.visualstudio.com/)
 
-#### 🎲 Running the Server
+#### 🎲 Run the project
 
 ```bash
 
 # Clone this repository
-$ git clone git@github.com:Leandro2585/template-server.git
+$ git clone git@github.com:Leandro2585/vendex.git
 
-# Go to server folder
-$ cd template-server
+# Entry folder
+$ cd vendex
 
 # Install the dependencies
-$ npm install
+$ cd server && npm install
+$ cd web && npm install
 
-# Run the application in development mode
-$ npm run dev:server
+# Execute a application in development mode
+$ cd server && npm run start
+$ cd web && npm run dev
 
-# The server will start at port:3333 - access http://localhost:3333 
+# The server started at port:3333 - access http://localhost:3333
+# The frontend started at port:3000 - access http://localhost:3000
 
 ```
 
 ---
 
-## 🛠 Technologies
+## 🛠 Tecnologias
 
 The following tools were used in the construction of the project:
 
@@ -77,26 +80,28 @@ The following tools were used in the construction of the project:
 
 -   **[Express](https://expressjs.com/)**
 -   **[CORS](https://expressjs.com/en/resources/middleware/cors.html)**
--   **[KnexJS](http://knexjs.org/)**
--   **[Postgres](https://github.com/mapbox/node-postgres)**
 -   **[ts-node](https://github.com/TypeStrong/ts-node)**
+-   **[nextjs](https://nextjs.org)**
+-   **[redux](https://redux.js.org)**
+-   **[redux-saga](https://redux.js.org)**
 
-> See the archive  [package.json](https://github.com/Leandro2585/template-server/blob/master/server/package.json)
+> Look the archive [package.json](https://github.com/Leandro2585/vendex/blob/master/server/package.json)
+> Look the archive [package.json](https://github.com/Leandro2585/vendex/blob/master/web/package.json)
 
 
-#### [](https://github.com/Leandro2585/Ecoleta#utilit%C3%A1rios)**Utilitários**
- 
--   Editor:  **[Visual Studio Code](https://code.visualstudio.com/)**  → Extensions:  **[Postgres](https://marketplace.visualstudio.com/items?itemName=alexcvzz.vscode-postgres)**
+#### [](https://github.com/Leandro2585/Vendex#utilit%C3%A1rios)**Utilities**
 
--   Test Server:  **[Insomnia](https://insomnia.rest/)**
+-   Editor:  **[Visual Studio Code](https://code.visualstudio.com/)**
+
 ---
+
 
 ## 💪 How to contribute to the project
 
-1. Make a **fork** of the project.
-2. Create a new branch with your changes: `git checkout -b my-feature`.
-3. Save the changes and create a commit message telling what you did: `git commit -m "feature: My new feature"`
-4. Send your changes: `git push origin my-feature`
+1. Make a **fork** of project.
+2. Create a new branch with your implementations: `git checkout -b my-feature`
+3. Save the updates and create a commit message telling what you have done: `git commit -m "feature: My new feature"`
+4. Submit your changes: `git push origin my-feature`
 
 ---
 
@@ -110,14 +115,14 @@ The following tools were used in the construction of the project:
 
 ---
 
-## 📝 Licence
+## 📝 Licença
 
 This project is under license [MIT](./LICENSE).
 
-Made by Leandro Real 👋🏽 [Contact us!](https://www.linkedin.com/in/leandro-r-434b811a5/)
+Made with ❤️ by Leandro Real 👋🏽 [Get in touch!](https://www.linkedin.com/in/leandro-r-434b811a5/)
 
 ---
 
-##  README Versions
+##  Versões do README
 
-[Português 🇧🇷](./README-pt.md)  |  [English 🇺🇸](./README.md)
+[Portuguese 🇧🇷](./README-pt.md)  |  [English 🇺🇸](./README.md)

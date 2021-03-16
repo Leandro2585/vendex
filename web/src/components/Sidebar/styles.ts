@@ -53,7 +53,7 @@ export const Background = styled.div`
   position:absolute;
   width: 100vw;
   height: 100vh;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0,0,0,0.1);
   z-index: 2;
   animation: opac 0.2s;
   @keyframes opac {

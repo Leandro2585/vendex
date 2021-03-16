@@ -119,9 +119,9 @@ input[type="date"]:disabled {
   }
 }
 .market-list-container {
-  height: 300px;
+  height: 200px;
   position: absolute;
-  top: 91px;
+  top: 11%;
   z-index: 10;
   left: 0;
   right: 0;

@@ -5,7 +5,7 @@ const api = axios.create({
   baseURL: 'https://api.pagar.me/1',
 });
 
-async function createRecipient(name) {
+async function createRecipient(name: string) {
   try {
     const response = await api.post('/recipients', {
       api_key,
@@ -44,20 +44,19 @@ async function createRecipient(name) {
       });
 
       return { error: false, data: response.data };
-    });
-  } catch (err) {
-    return { error: true, message: err.message };
-  }
+    } catch(err) {
+      return { error: true, message: err.message };
+    }
 }
 
-async function createSplitTransaction(data) {
+async function createSplitTransaction(data: object) {
   try {
     const response = await api.post('/transactions', {
       api_key,
       ...data,
     });
 
-    return { error: false, data.response.data };
+    return { error: false, data: response.data };
   } catch (err) {
     return { error: true, message: err.message };
   }

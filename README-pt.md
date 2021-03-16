@@ -1,50 +1,50 @@
 <p align="center">
-  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/Leandro2585/template-server?color=%2304D361">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/Leandro2585/vendex?color=%2304D361">
 
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/Leandro2585/template-server">
-  
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/Leandro2585/vendex">
+
   <a href="https://github.com/Leandro2585/template-server/commits/master">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/Leandro2585/template-server">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/Leandro2585/vendex">
   </a>
-    
+
    <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
-   <a href="https://github.com/Leandro2585/template-server/stargazers">
-    <img alt="Stargazers" src="https://img.shields.io/github/stars/Leandro2585/template-server?style=social">
+   <a href="https://github.com/Leandro2585/vendex/stargazers">
+    <img alt="Stargazers" src="https://img.shields.io/github/stars/Leandro2585/vendex?style=social">
   </a>
 
   <a href="https://github.com.br/Leandro2585">
     <img alt="Feito por Leandro" src="https://img.shields.io/badge/feito%20por-Leandro-%237519C1">
   </a>  
- 
-</p>
 
-<h4 align="center"> 
-	🚧  Template Server em desenvolvimento 🚀 🚧
+</p>
+<img src="./web/public/logo-full.svg"/>
+<h4 align="center">
+	🚧  Vendex em desenvolvimento 🚀 🚧
 </h4>
 
 <p align="center">
  <a href="#-sobre-o-projeto">Sobre</a> •
- <a href="#-como-executar-o-projeto">Como executar</a> • 
+ <a href="#-como-executar-o-projeto">Como executar</a> •
  <a href="#-tecnologias">Tecnologias</a> •  
- <a href="#-autor">Autor</a> • 
+ <a href="#-autor">Autor</a> •
  <a href="#user-content--licença">Licença</a>
 </p>
 
 
 ## 💻 Sobre o projeto
 
-Template Server - é uma forma de acelerar o processo da criação de um novo projeto, com este template você pula as etapas iniciais de instalações de libs padrões e já está pronto para ir ao desenvolvimento, assim sendo agiliza o trabalho do programador em boa parte.
+Vendex - Este é um marketplace para supermercados, onde os mesmos deverão poder cadastrar suas informações e seus respectivos produtos, a ideia central é que o cliente possa escolher em qual mercado o fará mais sentido adquirir o produto que deseja, há também algumas vantagens de fazer seu carrinho de compras virtualmente é que com facilidade poderá escolher os melhores produtos com os melhores preços e ao final de sua compra uma parcela do montante pago é retornado aos supermercados.
 
 ---
 
 ## 🚀 Como executar o projeto
 
-Esse template foi desenvolvido com Typescript, portanto certifique-se de que é usual para o seu contexto antes de fazer a instalação.
+Esse projeto foi desenvolvido com Typescript, portanto certifique-se de que é usual para o seu contexto antes de fazer a instalação.
 
 ### Pré-requisitos
 
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
-[Git](https://git-scm.com), [Node.js](https://nodejs.org/en/). 
+[Git](https://git-scm.com), [Node.js](https://nodejs.org/en/).
 Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
 
 #### 🎲 Rodando o Server
@@ -52,18 +52,21 @@ Além disto é bom ter um editor para trabalhar com o código como [VSCode](http
 ```bash
 
 # Clone este repositório
-$ git clone git@github.com:Leandro2585/template-server.git
+$ git clone git@github.com:Leandro2585/vendex.git
 
 # Vá para a pasta server
-$ cd template-server
+$ cd vendex
 
 # Instale as dependências
-$ npm install
+$ cd server && npm install
+$ cd web && npm install
 
 # Execute a aplicação em modo de desenvolvimento
-$ npm run dev:server
+$ cd server && npm run start
+$ cd web && npm run dev
 
-# O servidor inciará na porta:3333 - acesse http://localhost:3333 
+# O servidor inciará na porta:3333 - acesse http://localhost:3333
+# O frontend inciará na porta:3000 - acesse http://localhost:3000
 
 ```
 
@@ -77,14 +80,16 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 -   **[Express](https://expressjs.com/)**
 -   **[CORS](https://expressjs.com/en/resources/middleware/cors.html)**
--   **[Postgres](https://github.com/mapbox/node-postgres)**
 -   **[ts-node](https://github.com/TypeStrong/ts-node)**
+-   **[nextjs](https://nextjs.org)**
+-   **[redux](https://redux.js.org)**
+-   **[redux-saga](https://redux.js.org)**
 
 > Veja o arquivo  [package.json](https://github.com/Leandro2585/template-server/blob/master/server/package.json)
 
 
 #### [](https://github.com/Leandro2585/Ecoleta#utilit%C3%A1rios)**Utilitários**
- 
+
 -   Editor:  **[Visual Studio Code](https://code.visualstudio.com/)**  → Extensions:  **[Postgres](https://marketplace.visualstudio.com/items?itemName=alexcvzz.vscode-postgres)**
 
 -   Teste do Server:  **[Insomnia](https://insomnia.rest/)**

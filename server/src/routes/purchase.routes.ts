@@ -1,6 +1,9 @@
 import { Router } from 'express';
-import purchaseController from '../controllers/PurchaseController';
+import PurchaseController from '../controllers/PurchaseController';
+
 const purchaseRouter = Router();
+
+const purchaseController = new PurchaseController();
 
 purchaseRouter.post('/', purchaseController.create);
 

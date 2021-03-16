@@ -6,7 +6,7 @@ const MapMarker = ({ id, logo}) => {
   const { marketMapSelected } = useSelector(state => state.shop);
 
   return(
-    <Link to="/market/[id]">
+    <Link href="/market/[id]">
       <Container>
         <img
           src={

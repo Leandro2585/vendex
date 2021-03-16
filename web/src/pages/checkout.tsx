@@ -1,5 +1,6 @@
 import Header from '../components/Header';
 import ProductItemList from '../components/Product/List';
+
 const Checkout = () => {
   return(
     <div className="h-100">
