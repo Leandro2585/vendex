@@ -1,7 +1,18 @@
 import Header from '../components/Header';
 import ProductItemCard from '../components/Product/Card';
-
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
+import { requestMarket } from '../store/modules/shop/actions';
 const Market = () => {
+  const dispatch = useDispatch();
+  const router = useRouter();
+  const { id } = router.query;
+  const { market } = useSelector(state => state.shop);
+  useEffect(() => {
+    dispatch(requestMarket(id));
+  }, []);
+
   return(
     <div className="h-100">
       <Header hasCart/>
@@ -9,16 +20,16 @@ const Market = () => {
         <div className="row">
           <div className="col-3">
             <img
-              src="http://vilanova.itashopping.com.br/wp-content/uploads/2020/08/2-2.png"
+              src={market.logo}
               className="img-fluid market-image"/>
-            <b>San Supermercados</b>
+            <b>{market.name}</b>
             <div className="market-infos">
               <span className="mdi mdi-star"></span>
               <text>
-                <b>2,8</b>
+                <b>{market.emphasis}</b>
               </text>
               <span className="mdi mdi-cash-usd-outline"></span>
-              <text>$$$</text>
+              <text>{market.category}</text>
               <span className="mdi mdi-crosshairs-gps"></span>
               <text>2,9km</text>
             </div>
@@ -28,7 +39,7 @@ const Market = () => {
           <div className="col-9">
             <h5>Produtos</h5>
             <div className="row">
-              {[1,2,3,4,5,6,7,8,9].map(p => <ProductItemCard/>)}
+              {market.products?.map(item => <ProductItemCard product={item}/>)}
             </div>
           </div>
         </div>

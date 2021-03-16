@@ -1,15 +1,37 @@
+import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setShopMapSelected, setMapCenter } from '../../store/modules/shop/actions';
 import { ListItem } from './styles';
 
-const Market = () => {
+const Market = ({ market }) => {
+  const [isActive, setIsActive] = useState<boolean>(false);
+  const dispatch = useDispatch();
+  const { marketMapSelected } = useSelector(state => state.shop);
+  const setSelectedMarket = () => {
+    dispatch(setShopMapSelected(market._id));
+    dispatch(setMapCenter(market.location));
+  }
+
+  useEffect(() => {
+    if(marketMapSelected === market._id) {
+      setIsActive(true);
+    } else {
+      setIsActive(false);
+    }
+  }, [marketMapSelected, market._id]);
   return(
-    <ListItem className="d-inline-block">
+    <ListItem
+      isActive={isActive}
+      className="d-inline-block"
+      onClick={() => setSelectedMarket()}
+    >
       <div className="d-inline-block">
         <img
-          src="http://vilanova.itashopping.com.br/wp-content/uploads/2020/08/2-2.png"
+          src={market.logo}
           className="img-fluid"/>
       </div>
       <div className="d-inline-block pl-3 align-bottom">
-        <b>San Supermercados</b>
+        <b>{market.name}</b>
         <div className="market-infos">
           <span className="mdi mdi-star"></span>
           <text>
@@ -23,7 +45,7 @@ const Market = () => {
 
         <label className="badge badge-primary">Frete Grátis</label>
       </div>
-      
+
     </ListItem>
   );
 }

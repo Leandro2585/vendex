@@ -1,5 +1,6 @@
+import { useSelector } from 'react-redux';
 import { useContext } from 'react';
-import { SidebarContext } from '../../context/Sidebar';
+import { SidebarContext } from '../../context/SidebarContext';
 import { Container } from './styles';
 import Link from 'next/link';
 
@@ -8,6 +9,7 @@ interface HeaderProps {
 }
 
 const Header = ({ hasCart }: HeaderProps) => {
+  const { cart } = useSelector(state => state.shop);
   const { openCart } = useContext(SidebarContext);
   return(
     <Container className="bg-light">
@@ -16,12 +18,12 @@ const Header = ({ hasCart }: HeaderProps) => {
           <img src="/logo-full.svg" alt="Vendex"/>
         </Link>
       </header>
-      {hasCart && (
+      {hasCart && cart.length > 0 && (
         <button
           onClick={() => openCart()}
           className="btn btn-secondary cart-button">
           <span className="mdi mdi-cart"></span>
-          2 items
+          {cart.length} items
         </button>
       )}
     </Container>

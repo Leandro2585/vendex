@@ -1,8 +1,18 @@
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { requestMarkets } from '../store/modules/shop/actions';
 import Header from '../components/Header';
 import Map from '../components/Map';
 import Market from '../components/Market';
 
 const Home: React.FC = () => {
+  const dispatch = useDispatch();
+  const { markets } = useSelector((state) => state.shop);
+
+  useEffect(() => {
+    dispatch(requestMarkets());
+  }, []);
+
   return (
     <div className="h-100">
       <Header/>
@@ -12,11 +22,11 @@ const Home: React.FC = () => {
         </div>
 
         <ul className="col-12 market-list">
-          {[1,2,3,4,5,6,7,8,9,10,11,12].map(p => <Market />)}
+          {markets.map(market => <Market market={market} />)}
         </ul>
       </div>
 
-      <Map/>
+      <Map markets={markets}/>
     </div>
   )
 }

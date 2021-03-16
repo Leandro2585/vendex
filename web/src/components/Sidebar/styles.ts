@@ -12,8 +12,7 @@ export const Container = styled.div<SidebarProps>`
   animation: open 0.2s ease;
   span {
     position: absolute;
-    background: var(--secondary);
-    color: white;
+    color: var(--primary);
     padding: 8px;
     top: 15px;
     left: 15px;

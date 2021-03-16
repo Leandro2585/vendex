@@ -1,13 +1,27 @@
 import { Container } from './styles';
+import Link from 'next/link';
+import { useSelector } from 'react-redux';
 
-const MapMarker = () => {
+const MapMarker = ({ id, logo}) => {
+  const { marketMapSelected } = useSelector(state => state.shop);
+
   return(
-    <Container>
-      <img src={'/marker.png'} alt="Marker"/>
-      <img
-        src="http://vilanova.itashopping.com.br/wp-content/uploads/2020/08/2-2.png"
-        className="img-fluid img-marker"/>
-    </Container>
+    <Link to="/market/[id]">
+      <Container>
+        <img
+          src={
+            marketMapSelected === id
+            ? '/marker-selected.png'
+            : '/marker.png'
+          }
+          alt="Marker"
+        />
+        <img
+          src={logo}
+          className="img-fluid img-marker"
+        />
+      </Container>
+    </Link>
   );
 }
 export default MapMarker;

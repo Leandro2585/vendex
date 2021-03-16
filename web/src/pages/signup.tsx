@@ -1,6 +1,31 @@
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { setCustomer as setStoreCustomer } from '../store/modules/shop/actions';
 import Header from '../components/Header';
 
 const Home: React.FC = () => {
+  const dispatch = useDispatch();
+  const [customer, setCustomer] = useState({
+    external_id: new Date().getTime().toString(),
+    name: '',
+    type: 'individual',
+    country: 'br',
+    email: '',
+    documents: [
+      {
+        type: 'cpf',
+        number: '',
+      },
+    ],
+    phone_numbers: [''],
+    birthday: '',
+  });
+
+  const goToCheckout = () => {
+    dispatch(setStoreCustomer(customer));
+  };
+
+
   return (
     <div class="container-fluid h-100 bg-primary p-0">
       <Header/>
@@ -15,29 +40,56 @@ const Home: React.FC = () => {
             <input
               type="text"
               className="form-control form-control-lg mb-3"
-              placeholder="Seu Nome Completo"/>
+              placeholder="Seu Nome Completo"
+              onChange={(e) => {
+                setCustomer({ ...customer, name: e.target.value });
+              }}
+              />
 
             <input
               type="email"
               className="form-control form-control-lg mb-3"
-              placeholder="E-mail"/>
+              placeholder="E-mail"
+              onChange={(e) => {
+                setCustomer({ ...customer, email: e.target.value });
+              }}
+              />
 
 
             <div className="input-group">
               <input
                 type="text"
                 className="form-control form-control-lg mb-3 cpf-mask"
-                placeholder="CPF"/>
+                placeholder="CPF"
+                onChange={(e) => {
+                  setCustomer({ ...customer, documents: [
+                    {
+                      type: 'cpf',
+                      number: e.target.value
+                    }
+                  ] });
+                }}
+                />
 
               <input
                 type="tel"
                 className="form-control ml-2 form-control-lg mb-3"
-                placeholder="Telefone"/>
+                placeholder="Telefone"
+                onChange={(e) => {
+                  setCustomer({ ...customer, phone_numbers: [e.target.value] });
+                }}
+                />
             </div>
             <input
               type="date"
-              className="form-control form-control-lg mb-3 col-6"/>
-            <button className="btn btn-lg btn-block btn-secondary">
+              className="form-control form-control-lg mb-3 col-6"
+              onChange={(e) => {
+                setCustomer({ ...customer, birthday: e.target.value });
+              }}
+              />
+            <button
+              onClick={() => goToCheckout()}
+              className="btn btn-lg btn-block btn-secondary">
               Finalizar Pedido
             </button>
           </div>

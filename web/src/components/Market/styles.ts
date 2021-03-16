@@ -1,11 +1,28 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const ListItem = styled.li`
+interface ListItemProps {
+  isActive: boolean;
+}
+
+export const ListItem = styled.li<ListItemProps>`
+  ${props => props.isActive && css`
+      cursor:pointer;
+      border-bottom: 3px solid var(--primary);
+      transition: 0.2s;
+      background-color: #f6f5f5;
+  `}
+  &:hover {
+    cursor:pointer;
+    border-bottom: 3px solid var(--primary);
+    transition: 0.2s;
+    background-color: #f6f5f5;
+  }
   list-style: none;
   padding: 7px;
   margin-right: 20px;
   border-radius: 5px;
-  border-bottom: 3px;
+  border-bottom: 3px solid transparent;
+  transition: 0.2s;
   img {
     width: 80px;
     border-radius: 5px;
