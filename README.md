@@ -17,7 +17,10 @@
   </a>  
 
 </p>
-<img align="center" src="./web/public/logo-full.svg"/>
+<p align="center">
+	<img src="./web/public/logo-full.svg"/>
+</p>
+
 <h4 align="center">
 	🚧  Vendex in development 🚀 🚧
 </h4>
